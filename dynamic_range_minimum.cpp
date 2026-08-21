@@ -6,7 +6,7 @@ void update(vector<int>& seg,int idx, int left, int right, int k, int val) {
         seg[idx] = val;
     }
     else {
-        int mid = left + (right - left) / 2;
+        int mid=left+(right-left)/2;
         if (k <= mid) update(seg,idx*2, left, mid, k, val);
         else update(seg,idx*2+1, mid+1, right, k ,val);
         seg[idx] = min(seg[idx*2], seg[idx*2+1]);
